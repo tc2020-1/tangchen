@@ -62,3 +62,11 @@ for i in range(6):
 
 textpad = Text(root,width=100,height=200)
 textpad.place(x=10,y=0)
+
+scrolly = Scrollbar(textpad,orient=VERTICAL)
+scrollx = Scrollbar(textpad,orient=HORIZONTAL)
+textpad.config(yscrollcommand= scrolly.set,xscrollcommand=scrollx.set)
+scrolly.config(command = textpad.yview)
+scrollx.config(command = textpad.xview)
+scrolly.pack(side=RIGHT,fill=Y)
+scrollx.pack(side=BOTTOM,fill=X)
